@@ -6,6 +6,7 @@ services:
     build:
       context: .
       dockerfile: ./docker/amd64/Dockerfile.takserver-db
+    image: tak-server_db
     volumes:
       - "db_data:/var/lib/postgresql/data:z"
       - "./tak:/opt/tak:z"
@@ -20,6 +21,7 @@ services:
     build:
       context: .
       dockerfile: ./docker/amd64/Dockerfile.takserver
+    image: tak-server_tak
     env_file:
       - .env
     volumes:
